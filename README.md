@@ -14,7 +14,7 @@ Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) para a 
 O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo de dados dos sensores de radiofrequência (RFID) até o banco de dados e a interface de visualização.
 DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 
-![Fluxo do Projeto](Image.jpg)
+![Fluxo do Projeto](Image.png)
 
 ==========================================================
 
