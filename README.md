@@ -16,17 +16,6 @@ DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 
 ![Fluxo do Projeto](Image.png)
 
-==========================================================
-
-[ SENSORES ]          [ ESP32 ]          [ MQTT BROKER ]       [ NODE-RED ]         [ DASHBOARD ]
-+----------+        +-----------+        +-------------+      +------------+       +-------------+
-| RFID/NFC |        |  ESP32    |        |             |      | Logic Flow |       |  Node-RED   |
-|  Module  |  I2C   | DEVKIT V1 |  WiFi  |   HiveMQ    | WiFi |            |  HTTP |  Dashboard  |
-|   (V3)   |------->|           |------->|  (Broker)   |----->|  MongoDB   |------>| (Interface) |
-+----------+        |  Coleta   |        |             |      |    Out     |       |             |
-                    +-----------+        +-------------+      +------------+       +-------------+
-                          |                     |                    |                    |
-                  (Sensor de RF)        (Pub/Sub Protocol)    (Processamento)      (Visualização)
 
                   
 ## 2. Tecnologias e Materiais Utilizados
