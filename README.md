@@ -12,7 +12,21 @@ Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) para a 
 ## 1. Arquitetura do Sistema
 
 O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo de dados dos sensores de radiofrequência (RFID) até o banco de dados e a interface de visualização.
+DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 
+==========================================================
+
+[ SENSORES ]          [ ESP32 ]          [ MQTT BROKER ]       [ NODE-RED ]         [ DASHBOARD ]
++----------+        +-----------+        +-------------+      +------------+       +-------------+
+| RFID/NFC |        |  ESP32    |        |             |      | Logic Flow |       |  Node-RED   |
+|  Module  |  I2C   | DEVKIT V1 |  WiFi  |   HiveMQ    | WiFi |            |  HTTP |  Dashboard  |
+|   (V3)   |------->|           |------->|  (Broker)   |----->|  MongoDB   |------>| (Interface) |
++----------+        |  Coleta   |        |             |      |    Out     |       |             |
+                    +-----------+        +-------------+      +------------+       +-------------+
+                          |                     |                    |                    |
+                  (Sensor de RF)        (Pub/Sub Protocol)    (Processamento)      (Visualização)
+
+                  
 ## 2. Tecnologias e Materiais Utilizados
 
 ### Hardware
