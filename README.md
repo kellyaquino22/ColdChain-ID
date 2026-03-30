@@ -8,14 +8,12 @@ Através de uma arquitetura distribuída (camadas edge, gateway e servidor), o s
 
 Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) para a Especialização em Engenharia de Computação Aplicada à Indústria (ECAI) na UFRR. O sistema implementa uma solução de Internet das Coisas (IoT) para rastrear e monitorar a movimentação de produtos (potes de sorvete) em tempo real dentro de um ambiente fabril com câmera fria.
 
----
 
-## 🏗️ 1. Arquitetura do Sistema
+## 1. Arquitetura do Sistema
 
 O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo de dados dos sensores de radiofrequência (RFID) até o banco de dados e a interface de visualização.
- ---
 
-## 🛠️ 2. Tecnologias e Materiais Utilizados
+## 2. Tecnologias e Materiais Utilizados
 
 ### Hardware
 * Microcontrolador **ESP32 DEVKITV1**
@@ -28,9 +26,7 @@ O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo
 * **Node-RED 3.x** com Dashboard 2.0 (Motor de Fluxo e Visualização)
 * **MongoDB Atlas** (Banco de Dados NoSQL Cloud)
 
----
-
-## 🚀 3. Como Instalar e Executar
+## 3. Como Instalar e Executar
 
 Este repositório está organizado para guiar a replicação do ambiente experimental. Siga os passos:
 
@@ -46,9 +42,8 @@ Este repositório está organizado para guiar a replicação do ambiente experim
 2.  Configure as credenciais do HiveMQ nos nós de entrada MQTT.
 3.  Configure a string de conexão do MongoDB Atlas no nó de saída MongoDB.
 
----
 
-## 📊 4. Resultados e Análise Técnica
+## 4. Resultados e Análise Técnica
 
 Este projeto implementa boas práticas de **cibersegurança e confiabilidade industrial**, conforme as orientações da banca:
 
@@ -64,11 +59,9 @@ Todas as senhas e tokens de acesso (Wi-Fi, HiveMQ, MongoDB) foram separadas em a
 ### D. Buffer Offline (LittleFS)
 Se a conexão com o broker cair, o ESP32 armazena as leituras no sistema de arquivos local (`LittleFS`) e sincroniza automaticamente assim que a conexão for restabelecida.
 
----
 
-## ⚖️ 5. Licença
+## 5. Licença
 Este projeto é distribuído sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
----
 
 **Desenvolvido por Kelly Aquino**
