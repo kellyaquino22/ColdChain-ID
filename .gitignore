@@ -1,0 +1,14 @@
+# Credenciais e Segredos (Urgente)
+config.h
+secrets.h
+.env
+
+# Arquivos de sistema e cache da IDE
+.DS_Store
+*.bak
+*.tmp
+node_modules/
+.vscode/
+build/
+# Node-RED
+node_modules/
