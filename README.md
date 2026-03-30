@@ -4,46 +4,71 @@ ARQUITETURA DISTRIBUÍDA EDGE-SERVER PARA INVENTÁRIO EM TEMPO REAL COM RFID E T
 O ColdChain-ID é uma solução de inventário inteligente desenvolvida para otimizar a gestão da cadeia do frio na indústria de alimentos, especificamente no setor de sorvetes. O sistema utiliza a convergência entre a tecnologia de Identificação por Radiofrequência (RFID) passiva de 13,56 MHz e a Internet das Coisas (IoT) para realizar o monitoramento e rastreamento de ativos em tempo real.
 Através de uma arquitetura distribuída (camadas edge, gateway e servidor), o sistema automatiza a coleta de dados, eliminando erros do manuseio manual e garantindo a integridade térmica e logística dos produtos desde a produção até a expedição.
 
-Demonstração do Projeto
-(Link do projeto funcionando)
+[![Vídeo de Demonstração](https://img.shields.io/badge/VÍDEO-DEMONSTRAÇÃO-red?style=for-the-badge&logo=youtube)](LINK_DO_SEU_VIDEO_CURTO_AQUI)
 
+Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) para a Especialização em Engenharia de Computação Aplicada à Indústria (ECAI) na UFRR. O sistema implementa uma solução de Internet das Coisas (IoT) para rastrear e monitorar a movimentação de produtos (potes de sorvete) em tempo real dentro de um ambiente fabril com câmera fria.
 
-Como Reproduzir o Ambiente Experimental
-A avaliação experimental deste projeto foi dividida em duas fases principais: simulação virtual e prototipagem física.
-1. Simulação Virtual (Wokwi)
-Antes da montagem física, valide a lógica do sistema utilizando o simulador Wokwi.
-•	Hardware Simulado: ESP32 e Leitor PN532.
-•	Objetivo: Validar a pinagem SPI, a lógica da Máquina de Estados Finitos (FSM) e a geração de objetos JSON.
-•	Pinagem:
-o	ESP32 (VSPI) ↔ PN532
-o	SCK (D18), MISO (D19), MOSI (D23), SS (D5).
-2. Infraestrutura de Software
-Para processar os dados capturados pelos nós de borda (Edge), você precisará configurar:
-•	Broker MQTT: Utilize o HiveMQ Cloud para o gerenciamento de mensagens assíncronas.
-•	Orquestração (Node-RED): Importe o fluxo do Node-RED para gerenciar as mensagens MQTT e o Dashboard interativo.
-•	Banco de Dados: Configure o MongoDB localmente para persistência e auditoria dos registros de movimentação.
-3. Montagem do Protótipo Físico
-Siga a Tabela de Hardware abaixo para replicar a maquete funcional:
-Item	Descrição	Qtd.
-Microcontrolador	ESP32 com Wi-Fi nativo	4
-Leitor RFID	Módulo PN532 V3 (Interface SPI)	4
-Tags	Etiquetas RFID Passivas 13,56 MHz	Lote
-Alimentação	Fontes Externas 5V	4
+---
 
+## 🏗️ 1. Arquitetura do Sistema
 
+O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo de dados dos sensores de radiofrequência (RFID) até o banco de dados e a interface de visualização.
+ ---
 
-Arquitetura do Sistema
-O sistema opera em uma estrutura distribuída de três camadas:
-1.	Camada de Percepção (Edge): ESP32 + PN532 realizam a leitura das tags e enviam dados via protocolo MQTT.
-2.	Camada de Rede (Gateway): Broker HiveMQ orquestra a comunicação via rede local (WLAN).
-3.	Camada de Aplicação (Server): Node-RED processa a lógica de localização por proximidade e centróide, atualizando o Dashboard e o MongoDB.
+## 🛠️ 2. Tecnologias e Materiais Utilizados
 
+### Hardware
+* Microcontrolador **ESP32 DEVKITV1**
+* Leitor RFID **PN532 (Módulo V3)**
+* Cartões/Etiquetas (Tags) RFID (Mifare 13.56MHz)
 
-Resultados Esperados
-•	Precisão de Inventário: Até 98,7% com automação.
-•	Redução de Custos: Diminuição média de 14,2% no tempo de trânsito e 11,7% nas perdas por perecibilidade.
-•	Viabilidade: Sistema de baixo custo (aprox. R$ 10.650,00) ideal para PMEs.
+### Software e Serviços
+* **Arduino IDE 2.x** (Firmware do ESP32)
+* **HiveMQ Cloud** (MQTT Broker)
+* **Node-RED 3.x** com Dashboard 2.0 (Motor de Fluxo e Visualização)
+* **MongoDB Atlas** (Banco de Dados NoSQL Cloud)
 
-Licença e Autor
-Projeto desenvolvido por Kelly Silva de Aquino como requisito para o grau de especialista em Computação Aplicada na Indústria 4.0 pela UFRR
+---
 
+## 🚀 3. Como Instalar e Executar
+
+Este repositório está organizado para guiar a replicação do ambiente experimental. Siga os passos:
+
+### Passo 3.1: Configuração do Firmware (ESP32)
+1.  Abra a pasta `/src` na Arduino IDE.
+2.  Renomeie o arquivo `config_example.h` para `config.h`.
+3.  Abra `config.h` e insira suas credenciais de Wi-Fi e HiveMQ Cloud nos locais indicados. **NUNCA suba o arquivo `config.h` real para o GitHub.**
+4.  Instale as bibliotecas necessárias na IDE: `WiFiClientSecure`, `PubSubClient`, `Wire`, `Adafruit_PN532`, `time.h`, e `LittleFS`.
+5.  Compile e faça o upload para o ESP32.
+
+### Passo 3.2: Configuração do Node-RED
+1.  Importe o arquivo JSON localizado na pasta `/flows`.
+2.  Configure as credenciais do HiveMQ nos nós de entrada MQTT.
+3.  Configure a string de conexão do MongoDB Atlas no nó de saída MongoDB.
+
+---
+
+## 📊 4. Resultados e Análise Técnica
+
+Este projeto implementa boas práticas de **cibersegurança e confiabilidade industrial**, conforme as orientações da banca:
+
+### A. Confiabilidade e QoS 1
+Para garantir que as leituras das Tags RFID não se percam em caso de oscilação do Wi-Fi da fábrica, todas as publicações MQTT críticas utilizam o nível **QoS 1 (Quality of Service)**.
+
+### B. Monitoramento de Dispositivos (LWT)
+O sistema implementa o recurso **Last Will and Testament (LWT)** do protocolo MQTT. Se o ESP32 desconectar bruscamente (falha de energia ou rede), o Dashboard exibe automaticamente um alerta de **OFFLINE** no tópico `coldchain/status`.
+
+### C. Segurança de Credenciais
+Todas as senhas e tokens de acesso (Wi-Fi, HiveMQ, MongoDB) foram separadas em arquivos de configuração locais (`config.h`), protegidos pelo `.gitignore`, evitando a exposição de dados sensíveis na internet.
+
+### D. Buffer Offline (LittleFS)
+Se a conexão com o broker cair, o ESP32 armazena as leituras no sistema de arquivos local (`LittleFS`) e sincroniza automaticamente assim que a conexão for restabelecida.
+
+---
+
+## ⚖️ 5. Licença
+Este projeto é distribuído sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+---
+
+**Desenvolvido por Kelly Aquino**
