@@ -4,14 +4,23 @@ Aqui está a tabela de conexões recomendada para garantir que o seu sensor NFC 
 pelo microcontrolador:
 
 Conexões (Padrão SPI)
+
 Sensor RFID (Pin) -> ESP32 DEVKITV1 (GPIO)	-> Função
-3.3V	 -> 3V3	-> Alimentação 
+
+3.3V	 -> 3V3	-> Alimentação
+
 RST ->	GPIO 22	-> Reset
+
 GND	-> GND	-> Terra
+
 MISO ->	GPIO 19	-> Master In Slave Out
+
 MOSI ->	GPIO 23	-> Master Out Slave In
+
 SCK	-> GPIO 18	-> Serial Clock
+
 SDA (SS)	-> GPIO 21	-> Slave Select / Chip Select
+
 
 
 Observações Importantes para o seu Hardware:
