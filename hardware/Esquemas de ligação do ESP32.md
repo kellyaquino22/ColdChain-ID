@@ -24,7 +24,13 @@ SDA (SS)	-> GPIO 21	-> Slave Select / Chip Select
 
 
 Observações Importantes para o seu Hardware:
-•	Nível Lógico: O ESP32 e a maioria dos módulos RFID vermelhos (NFC V3) operam em 3.3V. Evite alimentar o sensor com 5V para não danificar os pinos de dados do microcontrolador.
-•	Antena: Ao montar a estrutura física, mantenha o sensor afastado de superfícies metálicas grandes, que podem causar interferência na leitura das tags.
-•	Bibliotecas: Se estiver usando o Arduino IDE, a biblioteca MFRC522 de Github Community funciona muito bem com essa pinagem, bastando definir os pinos SS_PIN como 21 e RST_PIN como 22 no seu código.
+
+•	Nível Lógico: O ESP32 e a maioria dos módulos RFID vermelhos (NFC V3) operam em 3.3V. 
+Evite alimentar o sensor com 5V para não danificar os pinos de dados do microcontrolador.
+
+•	Antena: Ao montar a estrutura física, mantenha o sensor afastado de superfícies metálicas grandes, 
+que podem causar interferência na leitura das tags.
+
+•	Bibliotecas: Se estiver usando o Arduino IDE, a biblioteca MFRC522 de Github Community funciona 
+muito bem com essa pinagem, bastando definir os pinos SS_PIN como 21 e RST_PIN como 22 no seu código.
 
