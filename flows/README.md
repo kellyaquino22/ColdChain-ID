@@ -41,7 +41,7 @@ Este repositório está organizado para guiar a replicação do ambiente experim
 ### Passo 3.1: Configuração do Firmware (ESP32)
 1.  Abra a pasta `/src` na Arduino IDE.
 2.  Renomeie o arquivo `config_example.h` para `config.h`.
-3.  Abra `config.h` e insira suas credenciais de Wi-Fi e HiveMQ Cloud nos locais indicados. **NUNCA suba o arquivo `config.h` real para o GitHub.**
+3.  Abra `config.h` e insira suas credenciais de Wi-Fi e HiveMQ Cloud nos locais indicados. 
 4.  Instale as bibliotecas necessárias na IDE: `WiFiClientSecure`, `PubSubClient`, `Wire`, `Adafruit_PN532`, `time.h`, e `LittleFS`.
 5.  Compile e faça o upload para o ESP32.
 
