@@ -16,7 +16,8 @@ https://github.com/user-attachments/assets/9eda46c9-2eb8-4ed6-bba1-e45db7d708da
 O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo de dados dos sensores de radiofrequência (RFID) até o banco de dados e a interface de visualização.
 DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 
-![Fluxo do Projeto](Image.png)
+
+<img width="2816" height="1536" alt="DIAGRAMA" src="https://github.com/user-attachments/assets/5846cce6-d38f-4ba5-a6cc-88ebfa248c9f" />
 
 
                   
