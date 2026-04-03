@@ -32,7 +32,7 @@ DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 * **Arduino IDE 2.x** (Firmware do ESP32)
 * **HiveMQ Cloud** (MQTT Broker)
 * **Node-RED 3.x** com Dashboard 2.0 (Motor de Fluxo e Visualização)
-* **MongoDB Atlas** (Banco de Dados NoSQL Cloud)
+* **MongoDB Compass** (Banco de Dados NoSQL Local)
 
 ## 3. Como Instalar e Executar
 
