@@ -4,11 +4,11 @@ ARQUITETURA DISTRIBUÍDA EDGE-SERVER PARA INVENTÁRIO EM TEMPO REAL COM RFID E T
 O ColdChain-ID é uma solução de inventário inteligente desenvolvida para otimizar a gestão da cadeia do frio na indústria de alimentos, especificamente no setor de sorvetes. O sistema utiliza a convergência entre a tecnologia de Identificação por Radiofrequência (RFID) passiva de 13,56 MHz e a Internet das Coisas (IoT) para realizar o monitoramento e rastreamento de ativos em tempo real.
 Através de uma arquitetura distribuída (camadas edge, gateway e servidor), o sistema automatiza a coleta de dados, eliminando erros do manuseio manual e garantindo a integridade térmica e logística dos produtos desde a produção até a expedição.
 
-
-https://github.com/user-attachments/assets/ed8794ad-5109-4d5b-accd-ae9e9ea82ee1
-
-
 Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) para a Especialização em Engenharia de Computação Aplicada à Indústria (ECAI) na UFRR. O sistema implementa uma solução de Internet das Coisas (IoT) para rastrear e monitorar a movimentação de produtos (potes de sorvete) em tempo real dentro de um ambiente fabril com câmera fria.
+
+
+https://github.com/user-attachments/assets/9eda46c9-2eb8-4ed6-bba1-e45db7d708da
+
 
 
 ## 1. Arquitetura do Sistema
@@ -16,7 +16,8 @@ Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) para a 
 O diagrama abaixo ilustra a arquitetura completa da solução, mostrando o fluxo de dados dos sensores de radiofrequência (RFID) até o banco de dados e a interface de visualização.
 DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 
-![Fluxo do Projeto](Image.png)
+
+<img width="2816" height="1536" alt="DIAGRAMA" src="https://github.com/user-attachments/assets/5846cce6-d38f-4ba5-a6cc-88ebfa248c9f" />
 
 
                   
@@ -40,9 +41,9 @@ Este repositório está organizado para guiar a replicação do ambiente experim
 ### Passo 3.1: Configuração do Firmware (ESP32)
 1.  Abra a pasta `/src` na Arduino IDE.
 2.  Renomeie o arquivo `config_example.h` para `config.h`.
-3.  Abra `config.h` e insira suas credenciais de Wi-Fi e HiveMQ Cloud nos locais indicados.
-5.  Instale as bibliotecas necessárias na IDE: `WiFiClientSecure`, `PubSubClient`, `Wire`, `Adafruit_PN532`, `time.h`, e `LittleFS`.
-6.  Compile e faça o upload para o ESP32.
+3.  Abra `config.h` e insira suas credenciais de Wi-Fi e HiveMQ Cloud nos locais indicados. 
+4.  Instale as bibliotecas necessárias na IDE: `WiFiClientSecure`, `PubSubClient`, `Wire`, `Adafruit_PN532`, `time.h`, e `LittleFS`.
+5.  Compile e faça o upload para o ESP32.
 
 ### Passo 3.2: Configuração do Node-RED
 1.  Importe o arquivo JSON localizado na pasta `/flows`.
