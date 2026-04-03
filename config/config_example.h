@@ -8,4 +8,9 @@ const char* mqtt_server = "ENDERECO_DO_BROKER_HIVEMQ";
 const char* mqtt_user = "USUARIO_MQTT"; 
 const char* mqtt_pass = "SENHA_MQTT";
 
+
+const char* chave_aes = "XXXXXXXXXXXXXXXX";
+const char* iv_aes    = "XXXXXXXXXXXXXXXX";
+
+
 #endif
