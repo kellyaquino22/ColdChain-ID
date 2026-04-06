@@ -1,7 +1,7 @@
-# Autor: Kelly Aquino
-# Orientador: Herbert Rocha 
-# Instituição: ECAI - Universidade Federal de Roraima (UFRR)
-# ColdChain-ID
+## Autor: Kelly Aquino
+## Orientador: Herbert Rocha 
+## Instituição: ECAI - Universidade Federal de Roraima (UFRR)
+## ColdChain-ID
 
 ARQUITETURA DISTRIBUÍDA EDGE-SERVER PARA INVENTÁRIO EM TEMPO REAL COM RFID E TÉCNICAS DE LOCALIZAÇÃO POR PROXIMIDADE
 
