@@ -1,9 +1,6 @@
 Autor: Kelly Aquino
-
 Orientador: Herbert Rocha 
-
 Instituição: ECAI - Universidade Federal de Roraima (UFRR)
-
 ColdChain-ID
 
 ARQUITETURA DISTRIBUÍDA EDGE-SERVER PARA INVENTÁRIO EM TEMPO REAL COM RFID E TÉCNICAS DE LOCALIZAÇÃO POR PROXIMIDADE
@@ -53,8 +50,6 @@ PUBLICANDO: Tenta o envio via MQTT. Caso não haja conexão, o dado é desviado 
 * **Node-RED 3.x** com Dashboard 2.0 (Motor de Fluxo e Visualização)
 * **MongoDB Compass** (Banco de Dados NoSQL Local)
   
-<img width="2559" height="1283" alt="FLUXOS NODE-RED" src="https://github.com/user-attachments/assets/a4ef1c57-1c41-4165-b511-26d8e8ce688c" />
-
 
 ## 3. Como Instalar e Executar
 
