@@ -33,6 +33,8 @@ DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 * **HiveMQ Cloud** (MQTT Broker)
 * **Node-RED 3.x** com Dashboard 2.0 (Motor de Fluxo e Visualização)
 * **MongoDB Compass** (Banco de Dados NoSQL Local)
+  
+<img width="2559" height="1528" alt="NODE-RED" src="https://github.com/user-attachments/assets/9e579524-3845-4e05-b36b-9cdbbf454c26" />
 
 ## 3. Como Instalar e Executar
 
