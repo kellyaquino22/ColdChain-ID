@@ -1,4 +1,8 @@
+# Autor: Kelly Aquino
+# Orientador: Herbert Rocha 
+# Instituição: ECAI - Universidade Federal de Roraima (UFRR)
 # ColdChain-ID
+
 ARQUITETURA DISTRIBUÍDA EDGE-SERVER PARA INVENTÁRIO EM TEMPO REAL COM RFID E TÉCNICAS DE LOCALIZAÇÃO POR PROXIMIDADE
 
 O ColdChain-ID é uma solução de inventário inteligente desenvolvida para otimizar a gestão da cadeia do frio na indústria de alimentos, especificamente no setor de sorvetes. O sistema utiliza a convergência entre a tecnologia de Identificação por Radiofrequência (RFID) passiva de 13,56 MHz e a Internet das Coisas (IoT) para realizar o monitoramento e rastreamento de ativos em tempo real.
@@ -19,7 +23,16 @@ DIAGRAMA DE ARQUITETURA: RFID PARA MONGODB VIA ESP32 E MQTT
 
 <img width="2816" height="1536" alt="DIAGRAMA" src="https://github.com/user-attachments/assets/5846cce6-d38f-4ba5-a6cc-88ebfa248c9f" />
 
+## 1.1 Lógica de Funcionamento (FSM)
+O firmware do ESP32 opera baseado em uma Máquina de Estados Finitos (FSM), garantindo que o fluxo de leitura, validação e publicação ocorra de forma síncrona e resiliente a falhas de conexão.
 
+AGUARDANDO_TAG: Estado inicial de baixo consumo de processamento aguardando o sensor PN532.
+
+VALIDANDO_SEQUENCIA: Verifica se o item está seguindo o fluxo correto da fábrica.
+
+SEQUENCIA_OK / ERRO: Define se o dado será preparado para envio ou se um alerta de desvio será disparado.
+
+PUBLICANDO: Tenta o envio via MQTT. Caso não haja conexão, o dado é desviado para o buffer local (LittleFS).
                   
 ## 2. Tecnologias e Materiais Utilizados
 
@@ -53,6 +66,24 @@ Este repositório está organizado para guiar a replicação do ambiente experim
 2.  Configure as credenciais do HiveMQ nos nós de entrada MQTT.
 3.  Configure a string de conexão do MongoDB Atlas no nó de saída MongoDB.
 
+## Passo 3.3: Configuração do MongoDB Local
+Para que o sistema armazene os dados coletados pelo Node-RED, siga estas etapas:
+
+Instalação:
+
+Baixe e instale o MongoDB Community Server em mongodb.com.
+Instale o MongoDB Compass (interface gráfica) para visualizar os dados.
+
+Criação da Base de Dados:
+Abra o MongoDB Compass e conecte-se em mongodb://localhost:27017.
+
+Crie um banco de dados chamado ColdChainDB.
+Crie uma coleção chamada inventario.
+
+Integração com Node-RED:
+No Node-RED, verifique o nó de saída do MongoDB.
+Certifique-se de que a string de conexão aponta para o seu IP local ou 127.0.0.1.
+O fluxo está configurado para inserir automaticamente um novo documento a cada leitura de tag validada.
 
 ## 4. Resultados e Análise Técnica
 
