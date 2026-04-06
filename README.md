@@ -43,6 +43,7 @@ PUBLICANDO: Tenta o envio via MQTT. Caso não haja conexão, o dado é desviado 
 * Microcontrolador **ESP32 DEVKITV1**
 * Leitor RFID **PN532 (Módulo V3)**
 * Cartões/Etiquetas (Tags) RFID (Mifare 13.56MHz)
+<img width="2142" height="2016" alt="ESQUEMA 1" src="https://github.com/user-attachments/assets/400710c4-d185-47bf-84dd-151a27128690" />
 
 ### Software e Serviços
 * **Arduino IDE 2.x** (Firmware do ESP32)
@@ -66,6 +67,7 @@ Este repositório está organizado para guiar a replicação do ambiente experim
 1.  Importe o arquivo JSON localizado na pasta `/flows`.
 2.  Configure as credenciais do HiveMQ nos nós de entrada MQTT.
 3.  Configure a string de conexão do MongoDB Atlas no nó de saída MongoDB.
+<img width="2559" height="1283" alt="FLUXOS NODE-RED" src="https://github.com/user-attachments/assets/ef8ea4f7-6a7b-44b3-a3d2-9b72d7cc2027" />
 
 ## Passo 3.3: Configuração do MongoDB Local
 Para que o sistema armazene os dados coletados pelo Node-RED, siga estas etapas:
