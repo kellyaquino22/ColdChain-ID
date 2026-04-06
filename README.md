@@ -36,6 +36,9 @@ VALIDANDO_SEQUENCIA: Verifica se o item está seguindo o fluxo correto da fábri
 SEQUENCIA_OK / ERRO: Define se o dado será preparado para envio ou se um alerta de desvio será disparado.
 
 PUBLICANDO: Tenta o envio via MQTT. Caso não haja conexão, o dado é desviado para o buffer local (LittleFS).
+
+<img width="1408" height="768" alt="FSM_Kelly" src="https://github.com/user-attachments/assets/3d49a7bb-5baa-40b1-8d81-687210184335" />
+
                   
 ## 2. Tecnologias e Materiais Utilizados
 
