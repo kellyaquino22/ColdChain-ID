@@ -3,23 +3,10 @@ a pinagem padrão no ESP32 utiliza os pinos do barramento VSPI.
 Aqui está a tabela de conexões recomendada para garantir que o seu sensor NFC MODULE V3 seja lido corretamente
 pelo microcontrolador:
 
-Conexões (Padrão SPI)
+<img width="2142" height="2016" alt="ESQUEMA 1" src="https://github.com/user-attachments/assets/e57e3808-9548-446c-be4c-9048bf7d815d" />
 
-Sensor RFID (Pin) -> ESP32 DEVKITV1 (GPIO)	-> Função
 
-3.3V	 -> 3V3	-> Alimentação
-
-RST ->	GPIO 22	-> Reset
-
-GND	-> GND	-> Terra
-
-MISO ->	GPIO 19	-> Master In Slave Out
-
-MOSI ->	GPIO 23	-> Master Out Slave In
-
-SCK	-> GPIO 18	-> Serial Clock
-
-SDA (SS)	-> GPIO 21	-> Slave Select / Chip Select
+<img width="2816" height="1536" alt="ESQUEMA PINAGEM" src="https://github.com/user-attachments/assets/1dc12ad4-5d55-487b-90aa-592f70f11d9a" />
 
 
 
